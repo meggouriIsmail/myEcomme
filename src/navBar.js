@@ -21,6 +21,7 @@ function NavBar() {
                 <li><img src="/assets/icons/shopping_cart.png" alt="shopping"/></li>
                 <li><img src="/assets/icons/love.png" alt="like"/></li>
             </ul>
+            <img src="/assets/icons/menu.png" alt="like"/>
         </div>
     );
 }
