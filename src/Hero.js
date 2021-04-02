@@ -5,7 +5,7 @@ const Hero = () => {
             <div className="h-Info">
                 <p className="h-desc">Men Collection 2021</p>
                 <h1 className="h-title" >NEW ARRIVALS</h1>
-                <input type="button" value="SHOP NOW" className="h-btn-shop" />
+                <input type="button" value="SHOP NOW" className="h-btn-shop btn-shop " />
             </div>
         </div>
     );
