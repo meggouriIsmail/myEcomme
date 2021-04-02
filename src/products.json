@@ -1,0 +1,56 @@
+{
+    "main":
+    {
+        "products": 
+        [
+            {
+                "categorie": "men",
+                "product": "man1.png",
+                "title": "Lorem Example",
+                "price": "14.52"
+            },
+            {
+                "categorie": "women",
+                "product": "woman1.png",
+                "title": "Lorem Example",
+                "price": "14.52"
+            },
+            {
+                "categorie": "accessories",
+                "product": "cap.png",
+                "title": "Lorem Example",
+                "price": "27.01"
+            },
+            {
+                "categorie": "women",
+                "product": "woman2.png",
+                "title": "Lorem Example",
+                "price": "07.12"
+            },
+            {
+                "categorie": "accessories",
+                "product": "cap.png",
+                "title": "Lorem Example",
+                "price": "14.52"
+            },
+            {
+                "categorie": "men",
+                "product": "man2.png",
+                "title": "Lorem Example",
+                "price": "14.52"
+            },
+            {
+                "categorie": "men",
+                "product": "man1.png",
+                "title": "Lorem Example",
+                "price": "27.01"
+            },
+            {
+                "categorie": "accessories",
+                "product": "cap.png",
+                "title": "Lorem Example",
+                "price": "07.12"
+            }
+        ]
+    }
+}
