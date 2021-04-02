@@ -1,3 +1,13 @@
+
+/* ----------------------------------------- MENU ----------------------------------------- */
+
+/*--------------------------------- NAVBAR --------------------------------- */
+/*--------------------------------- HERO --------------------------------- */
+/*--------------------------------- PRODUCTS --------------------------------- */
+/*--------------------------------- FOOTER --------------------------------- */
+/*--------------------------------- MOBILE --------------------------------- */
+
+
 .App {
   background: #fff;
 }
@@ -9,7 +19,7 @@ li, a {
   text-decoration: none;
   list-style: none;
 }
-/* Nav Bar */
+/* NAVBAR navbar */
 
 .navBar {
   position: fixed;
@@ -25,6 +35,7 @@ li, a {
 .navBar-sticky {
   background-color: #fff;
   color: #000;
+  z-index: 100;
   box-shadow: 0 2px 5px #00000025;
 }
 .page-links, .card-links {
@@ -40,7 +51,14 @@ li, a {
   width: 150px;
 }
 
-/* Hero */
+.menu-sm{
+  margin: auto 10px;
+  display: none;
+}
+
+
+
+/* HERO hero */
 
 .hero {
   position: relative;
@@ -280,4 +298,40 @@ footer {
 }
 .f-categorie li a {
   color: #fafafa;
+}
+
+/* MOBILE mobile */
+
+.nav-links-active {
+  transform: translateX(0) !important;
+}
+
+@media screen and (max-width:850px) {
+  .menu-sm {
+    display: block;
+    transition: all .5s ease-in;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    transform: translateX(-100%);
+    transition: all .5s ease-in;
+  }
+
+  .page-links {
+    margin: auto;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    overflow: hidden;
+  }
 }
