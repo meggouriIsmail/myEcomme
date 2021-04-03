@@ -5,6 +5,7 @@
 /*--------------------------------- HERO --------------------------------- */
 /*--------------------------------- PRODUCTS --------------------------------- */
 /*--------------------------------- FOOTER --------------------------------- */
+/*--------------------------------- CART --------------------------------- */
 /*--------------------------------- MOBILE --------------------------------- */
 
 
@@ -299,6 +300,35 @@ footer {
 .f-categorie li a {
   color: #fafafa;
 }
+
+.cart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 100vh;
+  background: #fff;
+  color: #000;
+  transition: .5s ease-in;
+}
+
+.c-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* MOBILE mobile */
 
