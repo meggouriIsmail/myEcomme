@@ -88,7 +88,8 @@ li, a {
 .h-btn-shop,
 .prod-btn-shop,
 .f-btn-contact,
-.prod-btn-more {
+.prod-btn-more,
+.c-btns {
   color: #fff;
   font-size: 16px;
   border: none;
@@ -177,10 +178,11 @@ li, a {
   width: 280px;
   margin: 20px auto;
   overflow: hidden;
-  background: #c5c3c3ad;
+  background: #fff;
 }
 .prod-img {
-  height: 80%;
+  height: 75%;
+  width: 100%;
   object-fit: scale-down;
   position: absolute;
   top: 40%;
@@ -190,7 +192,7 @@ li, a {
 .prod-description {
   position: absolute;
   bottom: 0%;
-  height: 20%;
+  height: 25%;
   width: 100%;
   color: #181717;
   background: #fafafa;
@@ -201,7 +203,10 @@ li, a {
   align-items: center;
   padding: 0 5px;
   justify-content: space-between;
-  font-size: 16px;
+  font-size: 2px;
+}
+.prod-desc p {
+  font-size: 20px;
 }
 .prod-icon, .prod-icon-color {
   position: absolute;
@@ -222,12 +227,12 @@ li, a {
   opacity: 1;
 }
 .prod-price {
-  margin: auto 10px;
+  margin: auto 5px;
   font-size: 20px;
 }
 .prod-btn-shop {
   position: absolute;
-  bottom: 20%;
+  bottom: 25%;
   left: 50%;
   transform: translate(-50%, 100%);
   opacity: 0;
@@ -303,12 +308,15 @@ footer {
   color: #fafafa;
 }
 
+/* CART cart */
+
 .cart {
   position: absolute;
   top: 0;
   right: 0;
-  width: 350px;
+  width: 400px;
   height: 100vh;
+  max-width: 100%;
   background: #fff;
   color: #000;
   transform: translateX(100%);
@@ -318,7 +326,12 @@ footer {
 .c-head {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  margin: 20px 40px;
+}
+.c-body {
+  height: 50%;
+  overflow-y: scroll;
 }
 .cart-entering {
   transform: translateX(100%);
@@ -326,7 +339,36 @@ footer {
 .cart-entered {
   transform: translateX(0);
 }
+.c-products {
+  margin: auto 50px;
+}
+.c-product {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.c-prod-img {
+  border: solid 1px #000;
+  background: #646464b7;
+  height: 80px;
+  width: 60px;
+  margin-right:25px;
+}
 
+.c-footer {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+.c-btns {
+  background: #000314;
+  margin: 5px;
+}
+.c-btns:hover {
+  color: #000314;
+  background: #fff;
+}
 /* SEARCH search */
 
 .search {

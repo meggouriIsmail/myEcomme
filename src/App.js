@@ -4,7 +4,6 @@ import Categories from './Categories';
 import Hero from './Hero';
 import NavBar from './navBar'
 import Products from './Products';
-import ProductsData from './products.json';
 import Footer from './Footer';
 import Search from './Search';
 import { Transition } from 'react-transition-group';
@@ -14,8 +13,12 @@ function App() {
   let [searchModel, setModel] = useState(false);
 
   useEffect(() => {
-    const data = ProductsData;
-    setProducts(data.main.products);
+    async function getProducts() {
+      const res = await fetch('https://fakestoreapi.com/products');
+      const data = await res.json();
+      setProducts(data);
+    }
+    getProducts();
   }, [setProducts]);
 
   function showSearch() {

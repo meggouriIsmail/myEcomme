@@ -8,11 +8,11 @@ const Products = (props) => {
                     (products ? products : []).map((obj, index) => {
                         return (
                             <div className="product" key={index}>
-                                <img src={`/assets/products/${obj.product}`} alt="product-pic" className="prod-img"/>
+                                <img src={obj.image} alt="product-pic" className="prod-img"/>
                                 <input type="button" value="SHOP NOW" className="prod-btn-shop btn-shop" />
                                 <div className="prod-description">
                                     <div className="prod-desc">
-                                        <p>{obj.title}</p>
+                                        <p>{obj.category}</p>
                                         <a href="w" className="prod-like">
                                             <img src="/assets/icons/love.png" alt="like" className="prod-icon" />
                                             <img src="/assets/icons/love_color.png" alt="like" className="prod-icon-color"/>
