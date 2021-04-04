@@ -1,28 +1,30 @@
 import React from 'react';
+import { Transition } from 'react-transition-group';
 import Cart from './Cart';
 
 class NavBar extends React.Component {
-    state = {showModel: false}
-    
-    
-    showLinks = () => {
-        const navlinks = document.querySelector('.nav-links');
-        navlinks.classList.toggle('nav-links-active');
-        navlinks.classList.add('nav-links-display');
-        
+    state = {
+        showModel: false,
+        showLinks: false,
     }
     
     toggleModel = () => {
         this.setState({
-            showModel: !this.state.showModel 
+            showModel: !this.state.showModel,
         });
     };
-
+    
+    toggleLinks = () => {
+        this.setState({
+            showLinks: !this.state.showLinks
+        });
+    };
+    
     render() { 
         return (
-            <div className="navBar">
+            <div className="navBar" >
                 <h2>Ecommerce</h2>
-                <div className="nav-links">
+                <div className={`nav-links ${ this.state.showLinks ? "active" : null}`}>
                     <ul className="page-links">
                         <li>Home</li>
                         <li>Shop</li>
@@ -31,12 +33,16 @@ class NavBar extends React.Component {
                     </ul>
                 </div>
                 <ul className="card-links">
-                    <li onClick={this.toggleModel}><img src="/assets/icons/search.png" alt="like"/></li>
+                    <li onClick={this.props.Click}><img src="/assets/icons/search.png" alt="like"/></li>
                     <li onClick={this.toggleModel}><img src="/assets/icons/shopping_cart.png" alt="shopping"/></li>
                     <li onClick={this.toggleModel}><img src="/assets/icons/love.png" alt="like"/></li>
                 </ul>
-                <img src="/assets/icons/menu.png" alt="like" className="menu-sm" onClick={this.showLinks} />
-                {this.state.showModel ? <Cart toggle={this.state.showModel}/>:null}
+                <img src="/assets/icons/menu.png" alt="like" className="menu-sm" onClick={this.toggleLinks} />
+                <Transition in={this.state.showModel} timeout={200}>
+                    {(state) => (
+                        <Cart className={`cart cart-${state}`} toggle={this.toggleModel} />
+                    )}
+                </Transition>
             </div>
         );
     }

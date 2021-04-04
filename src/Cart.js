@@ -1,24 +1,24 @@
 import React from 'react';
 
 class Cart extends React.Component {
-    state = {showModel: this.props.toggle}
+    state = {showModel: true}
 
     toggleModel = () => {
         this.setState({
-            showModel: !this.state.showModel 
+            showModel: !this.state.showModel
         });
     };
-
-    render() { 
+    
+    render() {
         return (
-            <div className="cart">
+            <div className={this.props.className}>
                 <div className="c-head">
                     <h2>YOU CART</h2>
-                    <img src="" alt="X" onClick={this.toggleModel} />
+                    <img src="/assets/icons/delete.png" alt="X" onClick={this.props.toggle} style={{cursor:"pointer"}} />
                 </div>
             </div>
         );
     }
 }
- 
+
 export default Cart;

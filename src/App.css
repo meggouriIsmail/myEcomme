@@ -6,8 +6,8 @@
 /*--------------------------------- PRODUCTS --------------------------------- */
 /*--------------------------------- FOOTER --------------------------------- */
 /*--------------------------------- CART --------------------------------- */
+/*--------------------------------- SEARCH --------------------------------- */
 /*--------------------------------- MOBILE --------------------------------- */
-
 
 .App {
   background: #fff;
@@ -51,7 +51,9 @@ li, a {
 .card-links {
   width: 150px;
 }
-
+.card-links li {
+  cursor: pointer;
+}
 .menu-sm{
   margin: auto 10px;
   display: none;
@@ -304,12 +306,13 @@ footer {
 .cart {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 350px;
   height: 100vh;
   background: #fff;
   color: #000;
-  transition: .5s ease-in;
+  transform: translateX(100%);
+  transition: all .5s ease-in;
 }
 
 .c-head {
@@ -317,22 +320,68 @@ footer {
   align-items: center;
   justify-content: space-evenly;
 }
+.cart-entering {
+  transform: translateX(100%);
+}
+.cart-entered {
+  transform: translateX(0);
+}
 
+/* SEARCH search */
 
+.search {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  color: #fff;
+  z-index: 110;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all .5s ease-in;
+}
+.search-box {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 70px;
+  width: 60%;
+  background: #fff;
+  display: flex;
+  overflow: hidden;
+  border: solid 1px #000;
+  box-shadow: 0 0 20px #00000086;
+}
+.s-toggle {
+  background: #affff857;
+  height: 100vh;
+  width: 100%;
+}
+.search-box img {
+  height: 100%;
+  width: 15%;
+}
 
-
-
-
-
-
-
-
-
-
+.s-text {
+  border: none;
+  height: 100%;
+  width: 100%;
+  padding: 0 10px;
+  font-size: 26px;
+  width: 85%;
+}
+.s-entering {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.s-entered {
+  transform: translateY(0%);
+  opacity: 1;
+}
 
 /* MOBILE mobile */
 
-.nav-links-active {
+.active {
   transform: translateX(0) !important;
 }
 
