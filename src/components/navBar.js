@@ -1,6 +1,7 @@
 import React from 'react';
 import { Transition } from 'react-transition-group';
 import Cart from './Cart';
+import {Link} from 'react-router-dom';
 
 class NavBar extends React.Component {
     state = {
@@ -20,16 +21,26 @@ class NavBar extends React.Component {
         });
     };
     
-    render() { 
+    
+    render() {
+        
         return (
-            <div className="navBar" >
+            <div className="navBar">
                 <h2>Ecommerce</h2>
                 <div className={`nav-links ${ this.state.showLinks ? "active" : null}`}>
                     <ul className="page-links">
-                        <li>Home</li>
-                        <li>Shop</li>
-                        <li>About</li>
-                        <li>Contact</li>
+                        <Link to="/">
+                            <li>Home</li>
+                        </Link>
+                        <Link to="/shop">
+                            <li>Shop</li>
+                        </Link>
+                        <Link to="/about">
+                            <li>About</li>
+                        </Link>
+                        <Link to="/contact">
+                            <li>Contact</li>
+                        </Link>
                     </ul>
                 </div>
                 <ul className="card-links">
