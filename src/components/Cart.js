@@ -36,10 +36,7 @@ class Cart extends React.Component {
                 </div>
                 <div className="c-footer">
                     <h2>Total: $41.24</h2>
-                    <div>
-                        <input type="button" value="VIEW CART" className="c-btns" />
-                        <input type="button" value="CHECK OUT" className="c-btns" />
-                    </div>
+                    <input type="button" value="VIEW CART" className="prod-btn-more" />
                 </div>
             </div>
         );

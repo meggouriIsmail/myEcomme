@@ -26,7 +26,9 @@ class NavBar extends React.Component {
         
         return (
             <div className="navBar">
-                <h2>Ecommerce</h2>
+                <Link to="/">
+                    <h2>Ecommerce</h2>
+                </Link>
                 <div className={`nav-links ${ this.state.showLinks ? "active" : null}`}>
                     <ul className="page-links">
                         <Link to="/">

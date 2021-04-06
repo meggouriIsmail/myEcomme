@@ -90,8 +90,7 @@ li, a {
 .h-btn-shop,
 .prod-btn-shop,
 .f-btn-contact,
-.prod-btn-more,
-.c-btns {
+.prod-btn-more {
   color: #fff;
   font-size: 16px;
   border: none;
@@ -183,6 +182,23 @@ li, a {
   overflow: hidden;
   background: #fff;
 }
+.prod-cat-btns {
+  border: none;
+  margin: auto 25px;
+  font-size: 24px;
+  background: transparent;
+  border-bottom: solid 2px transparent;
+}
+
+.prod-cat-btns:focus {
+  outline: none;
+}
+
+.prod-btns-active {
+  border-color: grey;
+}
+
+
 .prod-img {
   height: 75%;
   width: 100%;
@@ -248,12 +264,9 @@ li, a {
   background: #000113;
 }
 .prod-btn-more {
-  position: relative;
   background: #cfcfcf;
   color: #000113;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 50px 0 10px 0;
+  margin: 50px auto;
   width: 200px;
 }
 .prod-btn-more:hover {
@@ -423,18 +436,10 @@ footer {
   text-align: center;
   width: 100%;
 }
-.c-btns {
-  background: #000314;
-  margin: 5px;
-}
-.c-btns:hover {
-  color: #000314;
-  background: #fff;
-}
 /* SEARCH search */
 
 .search {
-  position: absolute;
+  position: fixed;
   top: 0;
   height: 100vh;
   width: 100%;
