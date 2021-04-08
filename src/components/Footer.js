@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
     return (
         <footer>
@@ -7,19 +9,21 @@ const Footer = () => {
                 <input type="button" value="SUBSCRIB" className="f-btn-contact" />
             </div>
             <div className="foo-cat">
-                <h2>CATEGORIES</h2>
+                <Link to="/shop">
+                    <h2>CATEGORIES</h2>
+                </Link>
                 <ul className="f-categorie">
                     <li>
-                        <a href="t">All Categories</a>
+                        Men
                     </li>
                     <li>
-                        <a href="t">Men</a>
+                        Women
                     </li>
                     <li>
-                        <a href="t">Women</a>
+                        Electronics
                     </li>
                     <li>
-                        <a href="t">Accessories</a>
+                        Jewelery
                     </li>
                 </ul>
             </div>
@@ -31,22 +35,22 @@ const Footer = () => {
                 <ul className="social">
                     <li>
                         <a href="https://ma.linkedin.com/in/ismail-meggouri-7437a71b4" target="_blank" rel="noreferrer">
-                            <img src="/assets/icons/linkedin_64px.png" alt="linkedin"/>
+                            <img src="/assets/icons/linkedin_64px.png" alt="linkedin" />
                         </a>
                     </li>
                     <li>
                         <a href="https://www.instagram.com/ismail_meggouri/?hl=en" target="_blank" rel="noreferrer">
-                            <img src="/assets/icons/instagram_64px.png" alt="instagram"/>
+                            <img src="/assets/icons/instagram_64px.png" alt="instagram" />
                         </a>
                     </li>
                     <li>
                         <a href="https://www.facebook.com/el.meggo" target="_blank" rel="noreferrer">
-                            <img src="/assets/icons/facebook_64px.png" alt="facebook"/>
+                            <img src="/assets/icons/facebook_64px.png" alt="facebook" />
                         </a>
                     </li>
                     <li>
                         <a href="https://github.com/meggouriIsmail" target="_blank" rel="noreferrer">
-                            <img src="/assets/icons/github_64px.png" alt="github"/>
+                            <img src="/assets/icons/github_64px.png" alt="github" />
                         </a>
                     </li>
                 </ul>
@@ -54,5 +58,5 @@ const Footer = () => {
         </footer>
     );
 }
- 
+
 export default Footer;

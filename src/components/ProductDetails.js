@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Product = ({ match }) => {
-    
+
     useEffect(() => {
         setPrice(product.price)
         getProduct();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const [product, setProduct] = useState({});
@@ -24,12 +24,12 @@ const Product = ({ match }) => {
         num.stepUp(1);
         updatePrice(num.value);
     }
-    
+
     const decrementValue = () => {
         num.stepDown(1);
         updatePrice(num.value);
     }
-    
+
     const updatePrice = () => {
         const pr = (parseFloat(product.price) * parseInt(num.value)).toFixed(2);
         setPrice(pr);
@@ -38,13 +38,13 @@ const Product = ({ match }) => {
     return (
         <div className="product-details">
             <div className="prdt-head">
-                <Link to="/shop">Shop</Link> 
-                <img src="/assets/icons/more.png" alt="&gt;"/>
+                <Link to="/shop">Shop</Link>
+                <img src="/assets/icons/more.png" alt="&gt;" />
                 <p>{product.title}</p>
             </div>
             <div className="prdt">
                 <div>
-                    <img src={product.image} style={{width:"100%"}} alt="product"/>
+                    <img src={product.image} style={{ height: "500px", maxWidth: "100%" }} alt="product" />
                 </div>
                 <div className="prdt-info">
                     <h3>{product.title}</h3>
@@ -62,5 +62,5 @@ const Product = ({ match }) => {
         </div>
     );
 }
- 
+
 export default Product;

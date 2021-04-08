@@ -1,6 +1,6 @@
 import React from 'react';
 import { Transition } from 'react-transition-group';
-import Cart from './Cart';
+import Likes from './Likes';
 import {Link} from 'react-router-dom';
 
 class NavBar extends React.Component {
@@ -47,13 +47,15 @@ class NavBar extends React.Component {
                 </div>
                 <ul className="card-links">
                     <li onClick={this.props.Click}><img src="/assets/icons/search.png" alt="like"/></li>
-                    <li onClick={this.toggleModel}><img src="/assets/icons/shopping_cart.png" alt="shopping"/></li>
+                    <Link to="/cart">
+                        <li><img src="/assets/icons/shopping_cart.png" alt="shopping"/></li>
+                    </Link>
                     <li onClick={this.toggleModel}><img src="/assets/icons/love.png" alt="like"/></li>
                 </ul>
                 <img src="/assets/icons/menu.png" alt="like" className="menu-sm" onClick={this.toggleLinks} />
                 <Transition in={this.state.showModel} timeout={200}>
                     {(state) => (
-                        <Cart className={`cart cart-${state}`} toggle={this.toggleModel} />
+                        <Likes className={`like like-${state}`} toggle={this.toggleModel} />
                     )}
                 </Transition>
             </div>

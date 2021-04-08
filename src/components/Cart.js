@@ -1,46 +1,66 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-class Cart extends React.Component {
-    state = {showModel: true}
+const Cart = () => {
 
-    toggleModel = () => {
-        this.setState({
-            showModel: !this.state.showModel
-        });
-    };
-    
-    render() {
-        return (
-            <div className={this.props.className}>
-                <div className="c-head">
-                    <h2>YOU CART</h2>
-                    <img src="/assets/icons/delete.png" alt="X" onClick={this.props.toggle} style={{cursor:"pointer"}} />
-                </div>
-                <div className="c-body">
-                    <ul className="c-products">
-                        <li className="c-product">
-                            <img src="/assets/products/woman2.png" alt="product-img" className="c-prod-img"/>
-                            <div className="c-prod-details">
-                                <p>consectetur adipisicing elit</p>
-                                <p>1x$17.05</p>
-                            </div>
-                        </li>
-                        <li className="c-product">
-                            <img src="/assets/products/man1.png" alt="product-img" className="c-prod-img"/>
-                            <div className="c-prod-details">
-                                <p>Lorem ipsum dolor</p>
-                                <p>1x$24.19</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div className="c-footer">
-                    <h2>Total: $41.24</h2>
-                    <input type="button" value="VIEW CART" className="prod-btn-more" />
-                </div>
-            </div>
-        );
+    useEffect(() => {
+        setPrice(36.00)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    const [price, setPrice] = useState();
+
+
+    const incrementValue = () => {
+        const num = document.querySelector(".plusmin-input");
+        num.stepUp(1);
+        updatePrice(num.value);
     }
+
+    const decrementValue = () => {
+        const num = document.querySelector(".plusmin-input");
+        num.stepDown(1);
+        updatePrice(num.value);
+    }
+
+    const updatePrice = (num) => {
+        const pr = (36 * parseInt(num)).toFixed(2);
+        setPrice(pr);
+    }
+
+    return (
+        <div className="Cart">
+            <div className="wrap-table-shopping-cart">
+                <table className="table-shopping-cart">
+                    <tbody>
+                        <tr className="table_head">
+                            <th className="column-1">Product</th>
+                            <th className="column-2"></th>
+                            <th className="column-3">Price</th>
+                            <th className="column-4">Quantity</th>
+                            <th className="column-5">Total</th>
+                        </tr>
+                        <tr className="table_row">
+                            <td className="column-1">
+                                <div >
+                                    <img src="/assets/products/man1.png" alt="IMG" className="img-itemcart" />
+                                </div>
+                            </td>
+                            <td className="column-2">Fresh Strawberries</td>
+                            <td className="column-3">$ 36.00</td>
+                            <td className="column-4">
+                                <div className="plusmin">
+                                    <input type="button" value="+" className="plusmin-btns" onClick={incrementValue} />
+                                    <input type="number" name="num-product" id="numProduct" defaultValue="1" readOnly className="plusmin-input" min="1" max="10" />
+                                    <input type="button" value="-" className="plusmin-btns" onClick={decrementValue} />
+                                </div>
+                            </td>
+                            <td className="column-5">$ {price}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    );
 }
 
 export default Cart;
