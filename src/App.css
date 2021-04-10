@@ -232,7 +232,6 @@ li, a {
 
 .prod-cat {
   margin-left: 2em;
-  margin-top: 10em;
 }
 
 .prod-cat-btns {
@@ -300,6 +299,9 @@ li, a {
 .prod-like:hover .prod-icon-color {
   opacity: 1;
 }
+.prod-like-icon-active {
+  opacity: 1;
+}
 .prod-price {
   margin: auto 5px;
   font-size: 20px;
@@ -321,8 +323,8 @@ li, a {
 .prod-btn-more {
   background: #cfcfcf;
   color: #000113;
-  margin: 50px auto;
-  width: 200px;
+  margin: 20px 10px;
+  width: 150px;
 }
 .prod-btn-more:hover {
   background: #000113;
@@ -483,7 +485,7 @@ footer {
 .l-product {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: space-between;
 }
 .l-prod-img {
   border: solid 1px #000;

@@ -12,27 +12,27 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
   let [searchModel, setModel] = useState(false);
-  
+
   function showSearch() {
     setModel(!searchModel);
   }
-  
+
   return (
     <div className="App">
       <BrowserRouter>
         <Transition in={searchModel} timeout={200}>
           {(state) => (
-              <Search className={`search s-${state}`} toggle={showSearch} />
+            <Search className={`search s-${state}`} toggle={showSearch} />
           )}
         </Transition>
         <NavBar Click={showSearch} />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/shop" component={Products}/>
+          <Route exact path="/shop" component={Products} />
           <Route path="/shop/:id" component={Product} />
           <Route exact path="/cart" component={Cart} />
-        </Switch>  
-        <Footer/>
+        </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );
