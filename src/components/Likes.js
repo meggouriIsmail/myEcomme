@@ -2,10 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Likes = (props) => {
-    const [clear, setClear] = useState(false)
-    const [value, setValue] = useState(
-        localStorage.getItem("likedProduct") ? JSON.parse(localStorage.getItem("likedProduct")) : []
-    );
+    const [value, setValue] = useState([]);
 
     useEffect(() => {
         const json = localStorage.getItem("likedProduct");
@@ -15,21 +12,6 @@ const Likes = (props) => {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [localStorage.getItem("likedProduct")]);
-
-    const clearStorage = () => {
-        setClear(!clear)
-        localStorage.clear("likedProduct")
-    }
-
-    const deleteLikedProd = (idToDelete) => {
-        const filteredProducts = value.filter((prod) => prod.id !== idToDelete);
-        setValue(filteredProducts);
-    };
-
-    useEffect(() => {
-        const json = JSON.stringify(value);
-        localStorage.setItem("likedProduct", json);
-    }, []);
 
     return (
         <div className={props.className}>
@@ -48,7 +30,6 @@ const Likes = (props) => {
                                         <p>{data.name}</p>
                                         <p>1x${data.price}</p>
                                     </div>
-                                    <img src="/assets/icons/trash.png" onClick={() => deleteLikedProd(data.id)} style={{ marginLeft: "20px", cursor: "pointer" }} alt="trash" />
                                 </li>
                             );
                         })
@@ -60,7 +41,6 @@ const Likes = (props) => {
                 <Link to="/cart">
                     <input type="button" value="VIEW CART" className="prod-btn-more" />
                 </Link>
-                <input type="button" value="CLEAR" className="prod-btn-more" onClick={clearStorage} />
             </div>
         </div>
     );

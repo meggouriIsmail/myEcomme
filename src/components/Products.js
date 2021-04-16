@@ -29,14 +29,30 @@ const Products = () => {
 
         setProducts(data);
     }
+
+    const checkProduct = (prod) => {
+        const exists = value.find(p => p.id === prod.id) === undefined ? false : true;
+
+        if (exists) {
+            deleteLikedProd(prod.id);
+        } else {
+            addProduct(prod);
+        }
+    }
+
     const addProduct = (prod) => {
         const likedProd = {
-            id: Math.random().toString(36).substr(2, 9),
+            id: prod.id,
             name: prod.category,
             price: prod.price,
             image: prod.image
         };
         setValue([...value, likedProd]);
+    };
+
+    const deleteLikedProd = (idToDelete) => {
+        const filteredProducts = value.filter((prod) => prod.id !== idToDelete);
+        setValue(filteredProducts);
     };
 
     const btnClick = (e) => {
@@ -71,9 +87,12 @@ const Products = () => {
                                 <div className="prod-description">
                                     <div className="prod-desc">
                                         <p>{product.category}</p>
-                                        <span className="prod-like" onClick={addProduct.bind(this, product)}>
-                                            <img src="/assets/icons/love.png" alt="like" className="prod-icon" />
-                                            <img src="/assets/icons/love_color.png" onClick={(e) => { e.target.classList.toggle("prod-like-icon-active") }} alt="like" className="prod-icon-color" />
+                                        <span className="prod-like" onClick={checkProduct.bind(this, product)}>
+                                            {value.find(p => p.id === product.id) === undefined ?
+                                                <img src="/assets/icons/love.png" alt="like" className="prod-icon" />
+                                                :
+                                                <img src="/assets/icons/love_color.png" alt="like" className="prod-icon" />
+                                            }
                                         </span>
                                     </div>
                                     <p className="prod-price">${product.price}</p>

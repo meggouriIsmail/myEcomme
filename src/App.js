@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Search from './components/Search';
-import NavBar from './components/navBar'
+import NavBar from './components/NavBar'
 import Home from './components/Home';
 import Products from './components/Products';
 import Product from './components/ProductDetails';

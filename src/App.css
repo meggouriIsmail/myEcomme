@@ -288,18 +288,7 @@ li, a {
   transition: .5s ease-in;
 }
 .prod-icon {
-  opacity: 1;
-}
-.prod-icon-color {
-  opacity: 0;
-}
-.prod-like:hover .prod-icon {
-  opacity: 0;
-}
-.prod-like:hover .prod-icon-color {
-  opacity: 1;
-}
-.prod-like-icon-active {
+  cursor: pointer;
   opacity: 1;
 }
 .prod-price {
@@ -485,7 +474,6 @@ footer {
 .l-product {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 .l-prod-img {
   border: solid 1px #000;
