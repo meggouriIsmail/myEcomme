@@ -2,21 +2,52 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Product = ({ match }) => {
-
-    useEffect(() => {
-        setPrice(product.price)
-        getProduct();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
     const [product, setProduct] = useState({});
     const [price, setPrice] = useState();
+    const [cartProds, setCart] = useState(
+        localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
+    );
 
-    async function getProduct() {
-        const res = await fetch(`https://fakestoreapi.com/products/${match.params.id}`);
-        const data = await res.json();
-        setProduct(data);
+    useEffect(() => {
+        async function getProduct() {
+            const res = await fetch(`https://fakestoreapi.com/products/${match.params.id}`);
+            const data = await res.json();
+            setProduct(data);
+        }
+        getProduct();
+    }, [match.params.id]);
+
+    useEffect(() => {
+        const json = JSON.stringify(cartProds);
+        localStorage.setItem("cart", json);
+    }, [cartProds]);
+
+    const checkProduct = (prod) => {
+        const exists = cartProds.find(p => p.id === prod.id) === undefined ? false : true;
+
+        if (exists) {
+            alert(`"${prod.title}" is already in cart`);
+        } else if (price !== undefined) {
+            addProduct(prod);
+        }
     }
+
+    const addProduct = (prod) => {
+        const likedProd = {
+            id: prod.id,
+            name: prod.title,
+            total: price,
+            price: prod.price,
+            quantity: num.value,
+            image: prod.image
+        };
+        setCart([...cartProds, likedProd]);
+    };
+
+    // const deleteLikedProd = (idToDelete) => {
+    //     const filteredProducts = cartProds.filter((prod) => prod.id !== idToDelete);
+    //     setCart(filteredProducts);
+    // };
 
     const num = document.getElementById("numProduct")
 
@@ -56,7 +87,7 @@ const Product = ({ match }) => {
                         <input type="button" value="-" className="plusmin-btns" onClick={decrementValue} />
                     </div>
                     <h2>Total: ${price}</h2>
-                    <input type="button" value="ADD TO CART" className="prod-btn-more" />
+                    <input type="button" value="ADD TO CART" className="prod-btn-more" onClick={checkProduct.bind(this, product)} />
                 </div>
             </div>
         </div>

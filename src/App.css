@@ -126,7 +126,11 @@ li, a {
   margin: 0 80px;
   color: #000;
 }
-
+.h-img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
 .h-desc {
   font-size: 26px;
 }
@@ -564,6 +568,7 @@ img {
 .table-shopping-cart .column-3 {
   width: 120px;
   font-size: 16px;
+  padding: 0 20px
 }
 
 .table-shopping-cart .column-4 {
