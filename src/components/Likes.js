@@ -39,7 +39,7 @@ const Likes = (props) => {
             <div className="l-footer">
                 <h2>Total: $41.24</h2>
                 <Link to="/cart">
-                    <input type="button" value="VIEW CART" className="prod-btn-more" />
+                    <input type="button" value="VIEW CART" className="prod-btn-more" onClick={props.toggle} />
                 </Link>
             </div>
         </div>

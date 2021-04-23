@@ -70,8 +70,8 @@ const Products = () => {
         <div style={{ margin: "6em auto" }}>
             <div className="prod-cat">
                 <input type="button" className="prod-cat-btns prod-btns-active" onClick={(e) => { btnClick(e); getProducts() }} value="All" />
-                <input type="button" name="men clothing" className="prod-cat-btns" onClick={btnClick} value="Men" />
-                <input type="button" name="women clothing" className="prod-cat-btns" onClick={btnClick} value="Women" />
+                <input type="button" name="men's clothing" className="prod-cat-btns" onClick={btnClick} value="Men" />
+                <input type="button" name="women's clothing" className="prod-cat-btns" onClick={btnClick} value="Women" />
                 <input type="button" name="jewelery" className="prod-cat-btns" onClick={btnClick} value="Jewelery" />
                 <input type="button" name="electronics" className="prod-cat-btns" onClick={btnClick} value="Electronics" />
             </div>
