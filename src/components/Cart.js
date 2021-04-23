@@ -2,6 +2,23 @@ import React, { useState, useEffect } from 'react';
 import CheckOut from './CheckOut';
 
 const Cart = () => {
+    const incrementValue = (e, price) => {
+        const num = e.target.parentElement.children.numProduct;
+        num.stepUp(1);
+        const el = e.target.parentElement.parentElement.nextElementSibling;
+        updatePrice(num.value, price, el);
+    }
+    const decrementValue = (e, price) => {
+        const num = e.target.parentElement.children.numProduct;
+        num.stepDown(1);
+        const el = e.target.parentElement.parentElement.nextElementSibling;
+        updatePrice(num.value, price, el);
+    }
+    const updatePrice = (num, price, el) => {
+        const pr = (parseFloat(price) * parseInt(num)).toFixed(2);
+        el.innerText = `$ ${pr}`;
+    }
+
     const [cartProds, setCart] = useState(
         localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
     );
@@ -14,24 +31,40 @@ const Cart = () => {
         }
     }, []);
 
-    const incrementValue = (e, price) => {
-        const num = e.target.parentElement.children.numProduct;
-        num.stepUp(1);
-        const el = e.target.parentElement.parentElement.nextElementSibling;
-        updatePrice(num.value, price, el);
-    }
+    useEffect(() => {
+        const json = JSON.stringify(cartProds);
+        localStorage.setItem("cart", json);
+    }, [cartProds]);
 
-    const decrementValue = (e, price) => {
-        const num = e.target.parentElement.children.numProduct;
-        num.stepDown(1);
-        const el = e.target.parentElement.parentElement.nextElementSibling;
-        updatePrice(num.value, price, el);
+    const checkProduct = () => {
+        const num = document.querySelectorAll(".plusmin-input")
+        num.forEach(n => {
+            if (n.value === "0") {
+                deleteLikedProd(parseInt(n.name))
+            }
+            else {
+                updateProducts(parseInt(n.name), parseInt(n.value));
+            }
+        })
     }
-
-    const updatePrice = (num, price, el) => {
-        const pr = (parseFloat(price) * parseInt(num)).toFixed(2);
-        el.innerText = `$ ${pr}`;
-    }
+    const deleteLikedProd = (idToDelete) => {
+        const filteredProducts = cartProds.filter((prod) => prod.id !== idToDelete);
+        setCart(filteredProducts);
+    };
+    var newProds = [];
+    const updateProducts = (id, q) => {
+        const prod = cartProds.find((prod) => prod.id === id);
+        const Prod = {
+            id: prod.id,
+            name: prod.name,
+            total: parseFloat(prod.price) * q,
+            price: prod.price,
+            quantity: q,
+            image: prod.image
+        };
+        newProds.push(Prod);
+        setCart([...newProds]);
+    };
 
     return (
         <div className="row">
@@ -60,7 +93,7 @@ const Cart = () => {
                                             <td className="column-4">
                                                 <div className="plusmin">
                                                     <input type="button" value="+" className="plusmin-btns" onClick={(e) => incrementValue(e, prod.price)} />
-                                                    <input type="number" name="num-product" id="numProduct" defaultValue={prod.quantity} readOnly className="plusmin-input" min="1" max="10" />
+                                                    <input type="number" id="numProduct" name={prod.id} defaultValue={prod.quantity} readOnly className="plusmin-input" min="0" max="10" />
                                                     <input type="button" value="-" className="plusmin-btns" onClick={(e) => decrementValue(e, prod.price)} />
                                                 </div>
                                             </td>
@@ -71,6 +104,9 @@ const Cart = () => {
                             }
                         </tbody>
                     </table>
+                </div>
+                <div className="br-w p-30">
+                    <input className="btn-update" type="button" name="update" value="Update Cart" onClick={checkProduct} />
                 </div>
             </div>
             <CheckOut />

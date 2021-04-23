@@ -44,12 +44,7 @@ const Product = ({ match }) => {
         setCart([...cartProds, likedProd]);
     };
 
-    // const deleteLikedProd = (idToDelete) => {
-    //     const filteredProducts = cartProds.filter((prod) => prod.id !== idToDelete);
-    //     setCart(filteredProducts);
-    // };
-
-    const num = document.getElementById("numProduct")
+    const num = document.getElementById("numProduct");
 
     const incrementValue = () => {
         num.stepUp(1);

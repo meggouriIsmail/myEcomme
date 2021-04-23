@@ -159,7 +159,8 @@ li, a {
 .prod-btn-shop,
 .f-btn-contact,
 .prod-btn-more,
-.btn-checkout {
+.btn-checkout,
+.btn-update {
   color: #fff;
   font-family: Poppins-SemiBold;
   font-size: 16px;
@@ -557,8 +558,20 @@ footer {
 .m-btn {
   margin: 20px auto;
 }
+.br-w {
+  border: 1px solid #d9d9d9;
+  border-top: none;
+  text-align: right;
+}
+.p-30 {
+  padding: 15px;
+}
 .br-b {
   border-bottom: dashed 1px #d9d9d9;
+}
+.btn-update:hover {
+  background: #000113;
+  color: #fafafa;
 }
 .m-b-30 {
   margin-bottom: 30px;
