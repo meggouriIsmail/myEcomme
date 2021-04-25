@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Transition } from 'react-transition-group';
+
 
 const Product = ({ match }) => {
     const [product, setProduct] = useState({});
@@ -7,6 +9,17 @@ const Product = ({ match }) => {
     const [cartProds, setCart] = useState(
         localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
     );
+    const [checkModel, setModel] = useState({ inProp: false, text: "", icon: "" });
+
+    function showCheckModel(text, icon) {
+        const mdl = {
+            inProp: !checkModel.inProp,
+            text: text,
+            icon: icon
+        }
+        setModel(mdl);
+        console.log(checkModel);
+    }
 
     useEffect(() => {
         async function getProduct() {
@@ -24,11 +37,15 @@ const Product = ({ match }) => {
 
     const checkProduct = (prod) => {
         const exists = cartProds.find(p => p.id === prod.id) === undefined ? false : true;
+        const msg = prod.title;
 
         if (exists) {
-            alert(`"${prod.title}" is already in cart`);
+            showCheckModel(msg + " is already in cart", "close");
         } else if (price !== undefined) {
             addProduct(prod);
+            showCheckModel(msg + " is added to cart", "check");
+        } else if (price === undefined) {
+            showCheckModel("you need to add at least one item of this product to add it to cart", "close");
         }
     }
 
@@ -61,6 +78,19 @@ const Product = ({ match }) => {
         setPrice(pr);
     }
 
+    const duration = 300;
+
+    const defaultStyle = {
+        transition: `all ${duration}ms ease-in-out`,
+        opacity: 0,
+        transform: "translateY(-100%)"
+    }
+
+    const transitionStyles = {
+        entering: { opacity: 1, transform: "translateY(0%)" },
+        entered: { opacity: 1, transform: "translateY(0%)" },
+    };
+
     return (
         <div className="product-details">
             <div className="prdt-head">
@@ -83,6 +113,19 @@ const Product = ({ match }) => {
                     </div>
                     <h2>Total: ${price}</h2>
                     <input type="button" value="ADD TO CART" className="prod-btn-more" onClick={checkProduct.bind(this, product)} />
+                    <Transition in={checkModel.inProp} timeout={duration}>
+                        {(state) => (
+                            <div id="model" style={{
+                                ...defaultStyle,
+                                ...transitionStyles[state]
+                            }}>
+                                <div className="model-block">
+                                    <img src={`/assets/icons/${checkModel.icon}.png`} alt="like" onClick={() => { showCheckModel(!checkModel.inProp) }} />
+                                    <h5>{checkModel.text}</h5>
+                                </div>
+                            </div>
+                        )}
+                    </Transition>
                 </div>
             </div>
         </div>

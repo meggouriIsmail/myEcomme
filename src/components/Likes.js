@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Likes = (props) => {
     const [value, setValue] = useState([]);
+    const [total, setTotal] = useState(0);
 
     useEffect(() => {
         const json = localStorage.getItem("likedProduct");
@@ -10,13 +11,18 @@ const Likes = (props) => {
         if (likedProducts) {
             setValue(likedProducts);
         }
+        let tl = 0;
+        likedProducts.forEach(pr => {
+            tl += pr.price;
+        });
+        setTotal(tl)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [localStorage.getItem("likedProduct")]);
 
     return (
         <div className={props.className}>
             <div className="l-head">
-                <h2>YOU CART</h2>
+                <h2>LIKED PRODUCTS</h2>
                 <img src="/assets/icons/delete.png" alt="X" onClick={props.toggle} style={{ cursor: "pointer" }} />
             </div>
             <div className="l-body">
@@ -37,7 +43,7 @@ const Likes = (props) => {
                 </ul>
             </div>
             <div className="l-footer">
-                <h2>Total: $41.24</h2>
+                <h2>Total: $ {total}</h2>
                 <Link to="/cart">
                     <input type="button" value="VIEW CART" className="prod-btn-more" onClick={props.toggle} />
                 </Link>
