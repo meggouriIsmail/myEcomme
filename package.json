@@ -1,7 +1,7 @@
 {
   "name": "ecommerce_sample",
   "version": "0.1.0",
-  "homepage": "https://meggouriismail.github.io/",
+  "homepage": "https://meggouriismail.github.io/ecommerce/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",

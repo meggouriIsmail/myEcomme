@@ -27,10 +27,10 @@ function App() {
         </Transition>
         <NavBar Click={showSearch} />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/shop" component={Products} />
-          <Route path="/shop/:id" component={Product} />
-          <Route exact path="/cart" component={Cart} />
+          <Route exact path={`${process.env.PUBLIC_URL}/`} component={Home} />
+          <Route exact path={`${process.env.PUBLIC_URL}/shop`} component={Products} />
+          <Route path={`${process.env.PUBLIC_URL}/shop/:id`} component={Product} />
+          <Route exact path={`${process.env.PUBLIC_URL}/cart`} component={Cart} />
         </Switch>
         <Footer />
       </BrowserRouter>

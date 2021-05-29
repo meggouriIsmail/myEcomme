@@ -81,7 +81,7 @@ const Products = () => {
                         return (
                             <div className="product" key={product.id}>
                                 <img src={product.image} alt="product-pic" className="prod-img" />
-                                <Link to={`/shop/${product.id}`}>
+                                <Link to={`${process.env.PUBLIC_URL}/shop/${product.id}`}>
                                     <input type="button" value="SHOP NOW" className="prod-btn-shop btn-shop" />
                                 </Link>
                                 <div className="prod-description">

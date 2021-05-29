@@ -26,28 +26,28 @@ class NavBar extends React.Component {
 
         return (
             <div className="navBar">
-                <Link to="/">
+                <Link to={`${process.env.PUBLIC_URL}/`}>
                     <h2>Ecommerce</h2>
                 </Link>
                 <div className={`nav-links ${this.state.showLinks ? "active" : null}`}>
                     <ul className="page-links">
-                        <Link to="/">
+                        <Link to={`${process.env.PUBLIC_URL}/`}>
                             <li onClick={this.toggleLinks}>Home</li>
                         </Link>
-                        <Link to="/shop">
+                        <Link to={`${process.env.PUBLIC_URL}/shop`}>
                             <li onClick={this.toggleLinks}>Shop</li>
                         </Link>
-                        <Link to="/about">
+                        <Link to={`${process.env.PUBLIC_URL}/about`}>
                             <li onClick={this.toggleLinks}>About</li>
                         </Link>
-                        <Link to="/contact">
+                        <Link to={`${process.env.PUBLIC_URL}/contact`}>
                             <li onClick={this.toggleLinks}>Contact</li>
                         </Link>
                     </ul>
                 </div>
                 <ul className="card-links">
                     <li onClick={this.props.Click}><img src={`${process.env.PUBLIC_URL}/assets/icons/search.png`} alt="like" /></li>
-                    <Link to="/cart">
+                    <Link to={`${process.env.PUBLIC_URL}/cart`}>
                         <li><img src={`${process.env.PUBLIC_URL}/assets/icons/shopping_cart.png`} alt="shopping" /></li>
                     </Link>
                     <li onClick={this.toggleModel}><img src={`${process.env.PUBLIC_URL}/assets/icons/love.png`} alt="like" /></li>
