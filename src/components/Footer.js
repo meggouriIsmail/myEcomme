@@ -30,7 +30,7 @@ const Footer = () => {
             <div className="foo-help">
                 <h2>GET IN TOUCH</h2>
                 <p>
-                    Any questions? Let us know in store at 8th floor, 379 Hassan II St, Rabt, MA 10018 or call us on (+212)6 95874215
+                    Any questions? Let us know in store at 8th floor, 379 Hassan II St, Rabt, MA 10018 or call us on (+212)6 96110578
                 </p>
                 <ul className="social">
                     <li>
