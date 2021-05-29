@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/myEcomme/static/css/main.e0afce0b.chunk.css",
-    "main.js": "/myEcomme/static/js/main.f2d73638.chunk.js",
-    "main.js.map": "/myEcomme/static/js/main.f2d73638.chunk.js.map",
+    "main.js": "/myEcomme/static/js/main.883162e4.chunk.js",
+    "main.js.map": "/myEcomme/static/js/main.883162e4.chunk.js.map",
     "runtime-main.js": "/myEcomme/static/js/runtime-main.ff66dd41.js",
     "runtime-main.js.map": "/myEcomme/static/js/runtime-main.ff66dd41.js.map",
     "static/js/2.fdf64937.chunk.js": "/myEcomme/static/js/2.fdf64937.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.ff66dd41.js",
     "static/js/2.fdf64937.chunk.js",
     "static/css/main.e0afce0b.chunk.css",
-    "static/js/main.f2d73638.chunk.js"
+    "static/js/main.883162e4.chunk.js"
   ]
 }
