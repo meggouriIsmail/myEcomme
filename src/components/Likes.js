@@ -10,12 +10,12 @@ const Likes = (props) => {
         const likedProducts = JSON.parse(json);
         if (likedProducts) {
             setValue(likedProducts);
+            let tl = 0;
+            likedProducts.forEach(pr => {
+                tl += pr.price;
+            });
+            setTotal(tl)
         }
-        let tl = 0;
-        likedProducts.forEach(pr => {
-            tl += pr.price;
-        });
-        setTotal(tl)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [localStorage.getItem("likedProduct")]);
 
