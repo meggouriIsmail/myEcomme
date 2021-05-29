@@ -95,7 +95,7 @@ const Product = ({ match }) => {
         <div className="product-details">
             <div className="prdt-head">
                 <Link to="/shop">Shop</Link>
-                <img src="/assets/icons/more.png" alt="&gt;" />
+                <img src={`${process.env.PUBLIC_URL}/assets/icons/more.png`} alt="&gt;" />
                 <p>{product.title}</p>
             </div>
             <div className="prdt">
@@ -120,7 +120,7 @@ const Product = ({ match }) => {
                                 ...transitionStyles[state]
                             }}>
                                 <div className="model-block">
-                                    <img src={`/assets/icons/${checkModel.icon}.png`} alt="like" onClick={() => { showCheckModel(!checkModel.inProp) }} />
+                                    <img src={`${process.env.PUBLIC_URL}/assets/icons/${checkModel.icon}.png`} alt="like" onClick={() => { showCheckModel(!checkModel.inProp) }} />
                                     <h5>{checkModel.text}</h5>
                                 </div>
                             </div>
