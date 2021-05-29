@@ -35,22 +35,22 @@ const Footer = () => {
                 <ul className="social">
                     <li>
                         <a href="https://ma.linkedin.com/in/ismail-meggouri-7437a71b4" target="_blank" rel="noreferrer">
-                            <img src="/assets/icons/linkedin_64px.png" alt="linkedin" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/icons/linkedin_64px.png`} alt="linkedin" />
                         </a>
                     </li>
                     <li>
                         <a href="https://www.instagram.com/ismail_meggouri/?hl=en" target="_blank" rel="noreferrer">
-                            <img src="/assets/icons/instagram_64px.png" alt="instagram" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/icons/instagram_64px.png`} alt="instagram" />
                         </a>
                     </li>
                     <li>
                         <a href="https://www.facebook.com/el.meggo" target="_blank" rel="noreferrer">
-                            <img src="/assets/icons/facebook_64px.png" alt="facebook" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/icons/facebook_64px.png`} alt="facebook" />
                         </a>
                     </li>
                     <li>
                         <a href="https://github.com/meggouriIsmail" target="_blank" rel="noreferrer">
-                            <img src="/assets/icons/github_64px.png" alt="github" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/icons/github_64px.png`} alt="github" />
                         </a>
                     </li>
                 </ul>

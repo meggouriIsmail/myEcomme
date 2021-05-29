@@ -46,13 +46,13 @@ class NavBar extends React.Component {
                     </ul>
                 </div>
                 <ul className="card-links">
-                    <li onClick={this.props.Click}><img src="/assets/icons/search.png" alt="like" /></li>
+                    <li onClick={this.props.Click}><img src={`${process.env.PUBLIC_URL}/assets/icons/search.png`} alt="like" /></li>
                     <Link to="/cart">
-                        <li><img src="/assets/icons/shopping_cart.png" alt="shopping" /></li>
+                        <li><img src={`${process.env.PUBLIC_URL}/assets/icons/shopping_cart.png`} alt="shopping" /></li>
                     </Link>
-                    <li onClick={this.toggleModel}><img src="/assets/icons/love.png" alt="like" /></li>
+                    <li onClick={this.toggleModel}><img src={`${process.env.PUBLIC_URL}/assets/icons/love.png`} alt="like" /></li>
                 </ul>
-                <img src="/assets/icons/menu.png" alt="like" className="menu-sm" onClick={this.toggleLinks} />
+                <img src={`${process.env.PUBLIC_URL}/assets/icons/menu.png`} alt="like" className="menu-sm" onClick={this.toggleLinks} />
                 <Transition in={this.state.showModel} timeout={200}>
                     {(state) => (
                         <Likes className={`like like-${state}`} toggle={this.toggleModel} />

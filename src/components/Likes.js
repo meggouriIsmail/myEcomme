@@ -23,7 +23,7 @@ const Likes = (props) => {
         <div className={props.className}>
             <div className="l-head">
                 <h2>LIKED PRODUCTS</h2>
-                <img src="/assets/icons/delete.png" alt="X" onClick={props.toggle} style={{ cursor: "pointer" }} />
+                <img src={`${process.env.PUBLIC_URL}/assets/icons/delete.png`} alt="X" onClick={props.toggle} style={{ cursor: "pointer" }} />
             </div>
             <div className="l-body">
                 <ul className="l-products">

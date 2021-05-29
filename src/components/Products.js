@@ -89,9 +89,9 @@ const Products = () => {
                                         <p>{product.category}</p>
                                         <span className="prod-like" onClick={checkProduct.bind(this, product)}>
                                             {value.find(p => p.id === product.id) === undefined ?
-                                                <img src="/assets/icons/love.png" alt="like" className="prod-icon" />
+                                                <img src={`${process.env.PUBLIC_URL}/assets/icons/love.png`} alt="like" className="prod-icon" />
                                                 :
-                                                <img src="/assets/icons/love_color.png" alt="like" className="prod-icon" />
+                                                <img src={`${process.env.PUBLIC_URL}/assets/icons/love_color.png`} alt="like" className="prod-icon" />
                                             }
                                         </span>
                                     </div>
