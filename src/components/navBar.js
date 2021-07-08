@@ -40,9 +40,6 @@ class NavBar extends React.Component {
                         <Link to={`${process.env.PUBLIC_URL}/about`}>
                             <li onClick={this.toggleLinks}>About</li>
                         </Link>
-                        <Link to={`${process.env.PUBLIC_URL}/contact`}>
-                            <li onClick={this.toggleLinks}>Contact</li>
-                        </Link>
                     </ul>
                 </div>
                 <ul className="card-links">

@@ -5,6 +5,7 @@
 /*--------------------------------- HERO --------------------------------- */
 /*--------------------------------- PRODUCTS --------------------------------- */
 /*--------------------------------- PRODUCT-DETAILS --------------------------------- */
+/*--------------------------------- ABOUT --------------------------------- */
 /*--------------------------------- FOOTER --------------------------------- */
 /*--------------------------------- LIKE --------------------------------- */
 /*--------------------------------- CART --------------------------------- */
@@ -53,7 +54,7 @@ li, a {
 }
 .page-links, .card-links {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .page-links {
@@ -345,6 +346,42 @@ input[type=number] {
 .plusmin-btns {
   height: 44px;
 }
+/* ABOUT */
+
+.About {
+  width: auto;
+  background: #110d18;
+  font-family: 'Poppins', sans-serif
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  padding: 7rem 1rem 4rem 1rem;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  z-index: 2;
+  border-radius: 15px;
+  width: 200px;
+  height: 250px;
+  margin: 20px 0;
+  box-shadow: 10px 10px 6px 0 #0000003b, -10px -10px 6px 0 #0000003b
+}
+
+.profile {
+  z-index: 2;
+  color: #FBFBFB;
+  padding-right: 10px;
+  width: 300px;
+  font-size: 24px;
+  line-height: 1.5;
+  height: 250px;
+}
+
 /* FOOTER footer */
 
 footer {
