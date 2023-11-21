@@ -8,6 +8,7 @@ const Likes = (props) => {
     useEffect(() => {
         const json = localStorage.getItem("likedProduct");
         const likedProducts = JSON.parse(json);
+        console.log("dddddddd ===>  "+process.env.PUBLIC_URL);
         if (likedProducts) {
             setValue(likedProducts);
             let tl = 0;
