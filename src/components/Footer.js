@@ -30,7 +30,7 @@ const Footer = () => {
             <div className="foo-help">
                 <h2>GET IN TOUCH</h2>
                 <p>
-                    Any questions? Let us know in store at 8th floor, 379 Hassan II St, Rabt, MA 10018 or call us on (+212)6 96110578
+                    Any questions? call us on (+212)696110578
                 </p>
                 <ul className="social">
                     <li>
@@ -54,6 +54,7 @@ const Footer = () => {
                         </a>
                     </li>
                 </ul>
+                <div className="copy-right">Copyright &copy;&nbsp;<a href='https://me.swayli.tech' target='_' style={{ fontWeight: "bold", textDecoration: "underline" }}>Swayli.tech</a>&nbsp;{new Date().getFullYear()}</div>
             </div>
         </footer>
     );
